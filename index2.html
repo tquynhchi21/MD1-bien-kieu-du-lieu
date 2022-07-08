@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<h1>Đổi Tiền Tệ</h1>
+<table style="text-align: center" width="600px" >
+  <tr>
+    <td>Amount</td>
+    <td>Form Currency</td>
+    <td>To Currency</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><input type="text" id="input"></td>
+    <td>
+      <select id="from" name="vietnam">
+        <option value="1">VietNam</option>
+        <option value="0">USD</option>
+      </select>
+    </td>
+    <td>
+      <select id="to" name="usd">
+        <option value="1">VietNam</option>
+        <option value="0">USD</option>
+      </select>
+    </td>
+    <td>
+      <button onclick="convert()">Convert</button>
+    </td>
+  </tr>
+  <p id="result">Result</p>
+</table>
+<script>
+  function convert() {
+    let input = +document.getElementById('input').value;
+    let from = +document.getElementById('from').value;
+    let to = +document.getElementById('to').value;
+    if (from == to){
+      document.getElementById('result').innerHTML = "Result: " + input + (from ? ' VND' : ' USD');
+    } else {
+      from ?  (document.getElementById('result').innerHTML = "Result: " + input / 23000 + ' USD') : (document.getElementById('result').innerHTML = "Result: " + input * 23000 + ' VND')
+    }
+
+  }
+</script>
+
+</body>
+</html>

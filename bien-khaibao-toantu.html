@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+<table>
+
+    <tr>
+        <td><input type="text" id="diemhoa" >Điểm Hóa</td>
+        <td><input type="text" id="diemly">Điểm Lý</td>
+        <td><input type="text" id="diemsinh">Điểm Sinh</td>
+        <td><input type="button" onclick="display()";value="diemtrungbinh"></td>
+
+    </tr>
+</table>
+<p id="result">Result</p>
+
+<script>
+    function display() {
+        let diemhoa =+document.getElementById("diemhoa").value;
+        let diemly =+document.getElementById("diemly").value;
+        let diemsinh =+document.getElementById("diemsinh").value;
+        let diemtrungbinh = (diemhoa + diemly + diemsinh) / 3;
+        document.getElementById('result').innerHTML =diemtrungbinh
+    }
+
+
+
+</script>
+
+</body>
+</html>
